@@ -1,7 +1,11 @@
+" vim visput: fix visual put
+"
+" Maintainer: Andy Massimino
+" Email:      a@normed.space
+"
 
 " the currently active v:register
 let s:register = '"'
-let g:visput_stuff_register = ''
 
 function! VisualPut(type, ...)
   let l:height = line("']") - line("'[") + 1
@@ -39,6 +43,7 @@ function! s:setup()
   return ''
 endfunction
 
-xmap <silent> p :<c-u>call <sid>setup()<cr>g@<sid>(visual)
-xmap <silent> P p
+xmap <silent> <plug>(visput-p) :<c-u>call <sid>setup()<cr>g@<sid>(visual)
 
+xmap <silent> p <plug>(visput-p)
+xmap <silent> P <plug>(visput-p)
