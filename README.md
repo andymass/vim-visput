@@ -11,10 +11,12 @@ This plugin improves visual puts:
 
 If you use [vim-plug][p], then add the following line to your vimrc file:
 
-    Plug 'andymass/vim-visput'
+```vim
+Plug 'andymass/vim-visput'
+```
 
-and then use :PlugInstall.  use, you can use vim's built-in plugin system
-(:help packadd) or any other plugin manager.
+and then use `:PlugInstall`.  Or, you can use vim's built-in plugin system
+(`:help packadd`) or any other plugin manager.
 
 # Maps
 
@@ -22,7 +24,7 @@ This plugin overrides visual mode maps p and P.
 
 # Self-promotion
 
-Check out my other plugins, [match-up][mu] and [trade-winds][tw].
+Check out my other plugins, 🤜🤛 [match-up][mu] and 💨⛵ [trade-winds][tw].
 
 [p]: https://github.com/junegunn/vim-plug
 [mu]: https://github.com/andymass/vim-matchup
