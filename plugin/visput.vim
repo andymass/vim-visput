@@ -7,7 +7,7 @@
 " the currently active v:register
 let s:register = '"'
 
-function! VisualPut(type, ...)
+function! s:VisualPut(type, ...) abort
   let l:height = line("']") - line("'[") + 1
   let l:width = col("']") - col("'[") + 1
 
@@ -19,7 +19,7 @@ function! VisualPut(type, ...)
     let l:regwidth = l:regtype[1:]
 
     if l:regheight != l:height || l:regwidth != l:width
-      let l:ans = input('block dimension mismatch; continue? (y/N) ')
+      let l:ans = input('visput: block dimension mismatch; continue? (y/N) ')
       if l:ans isnot? 'y'
         return
       endif
@@ -39,7 +39,7 @@ onoremap <silent> <sid>(visual) v:<c-u>VisPutMotion<cr>
 
 function! s:setup()
   let s:register = v:register
-  set opfunc=VisualPut
+  let &opfunc = expand('<SID>') . 'VisualPut'
   return ''
 endfunction
 
