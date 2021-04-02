@@ -37,9 +37,13 @@ command! VisPutMotion normal! 1v
 
 onoremap <silent> <sid>(visual) v:<c-u>VisPutMotion<cr>
 
+function! s:SID()
+  return matchstr(expand('<sfile>'), '<SNR>\zs\d\+\ze_SID$')
+endfunction
+
 function! s:setup()
   let s:register = v:register
-  let &opfunc = expand('<SID>') . 'VisualPut'
+  let &opfunc = "\<SNR>" . s:SID() . '_VisualPut'
   return ''
 endfunction
 
